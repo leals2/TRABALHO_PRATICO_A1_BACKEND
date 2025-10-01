@@ -1,0 +1,27 @@
+{
+  "name": "trabalho_pratico_a1_backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sostines17/TRABALHO_PRATICO_A1_BACKEND.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Sostines17/TRABALHO_PRATICO_A1_BACKEND/issues"
+  },
+  "homepage": "https://github.com/Sostines17/TRABALHO_PRATICO_A1_BACKEND#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.1.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
+}
