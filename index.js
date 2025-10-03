@@ -19,10 +19,10 @@ app.use((req, res, next) => {
 });
 //---------------------------------------------------------------------------------------------------------------
 // Roteadores:
-const Tabela_Contato = require("./Routes/tabela_contatos");
+const Tabela_Contato = require("./routes/tabela_contatos");
 app.use(Tabela_Contato);
 
-const Tabela_Empresa = require("./Routes/tabela_empresas");
+const Tabela_Empresa = require("./routes/tabela_empresas");
 app.use(Tabela_Empresa);
 //---------------------------------------------------------------------------------------------------------------
 // executa:
