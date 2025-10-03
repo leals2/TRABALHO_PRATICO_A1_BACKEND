@@ -74,14 +74,14 @@ router.post("/contato", (req, res, next) => {
 
 //---------------------------------------------------------------------------------------------------------
 
-// --- Rota GET: Listar Todos os Alunos ---
+// --- Rota GET: Listar Todos os Contatos ---
 router.get("/contatos", (req, res, next) => {
   res.json(contatos);
 });
 
 //---------------------------------------------------------------------------------------------------------
 
-// --- Rota GET: Buscar Aluno por ID ---
+// --- Rota GET: Buscar Contato por ID ---
 router.get("/contatos/:id", (req, res, next) => {
   const idRecebido = req.params.id;
   const contato = contatos.find((contato) => contato.id == idRecebido);
