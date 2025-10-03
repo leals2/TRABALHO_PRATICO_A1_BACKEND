@@ -1,6 +1,31 @@
-const express = require('express')
-const cors = require('cors')
+const express = require("express");
+const app = express();
+//---------------------------------------------------------------------------------------------------------------
+//intermediários:
+const cors = require("cors");
+//---------------------------------------------------------------------------------------------------------------
+//habilitando o browser para mandar uma requisição:
+app.use(cors());
+//---------------------------------------------------------------------------------------------------------------
+// habilita receber json como corpo de requisição:
+app.use(express.json());
+//---------------------------------------------------------------------------------------------------------------
+app.use((req, res, next) => {
+  console.log("---### LOG da Requisição ###---");
+  console.log("TIME: ", new Date().toLocaleString());
+  console.log("METODO: ", res.method);
+  console.log("ROTA: ", res.url);
+  next();
+});
+//---------------------------------------------------------------------------------------------------------------
+// Roteadores:
+const Tabela_Contato = require("./Routes/tabela_contatos");
+app.use(Tabela_Contato);
 
-const app = express()
-app.use(cors())
-app.use(express.json())
+const Tabela_Empresa = require("./Routes/tabela_empresas");
+app.use(Tabela_Empresa);
+//---------------------------------------------------------------------------------------------------------------
+// executa:
+app.listen(3000, () => {
+  console.log("Api rodando em htt://localhost:3000");
+});
