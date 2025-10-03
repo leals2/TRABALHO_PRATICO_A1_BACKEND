@@ -1,0 +1,232 @@
+{
+	"info": {
+		"_postman_id": "a05d2a42-e3ec-4770-b9d8-d4efca0d4443",
+		"name": "TRABALHO_PRATICO",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "47514844",
+		"_collection_link": "https://sostines-fonseca-9879884.postman.co/workspace/IESB_2B~d4ff4a41-6ee6-4ec9-91f1-eb1d38f58845/collection/47514844-a05d2a42-e3ec-4770-b9d8-d4efca0d4443?action=share&source=collection_link&creator=47514844"
+	},
+	"item": [
+		{
+			"name": "CONTATOS",
+			"item": [
+				{
+					"name": "Buscar Contato pelo ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/contatos/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"contatos",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Lista de Contato",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/contatos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"contatos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cadastrar um Contato",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Contato Novo\",\r\n    \"cpf\": \"999.999.999.99\",\r\n    \"telefone\": \"61999999999\",\r\n    \"email\": \"contato.novo@email.com\"\r\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/contatos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"contatos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizar Contato",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1,\r\n    \"nome\": \"Contato Atualizado\",\r\n    \"cpf:\": \"010.101.010.10\",\r\n    \"telefone\": \"61993249445\",\r\n    \"email\": \"contato.atualizado@email.com\"\r\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/contatos/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"contatos",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Deletar Contato",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/contatos/5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"contatos",
+								"5"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "EMPRESAS",
+			"item": [
+				{
+					"name": "Buscar Empresa pelo ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/empresas/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"empresas",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Lista de Empresas",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/empresas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"empresas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cadastrar uma Empresa",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Nova Empresa\",\r\n    \"telefone\": \"61992299229\",\r\n    \"email\": \"empresa@novaempresa.com\",\r\n    \"cnpj\": \"55.123.456/0002-03\"\r\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/empresas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"empresas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizar Empresa",
+					"request": {
+						"method": "PUT",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Deletar Empresa",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/empresas/1759514784713",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"empresas",
+								"1759514784713"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
