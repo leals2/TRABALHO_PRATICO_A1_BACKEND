@@ -27,5 +27,5 @@ app.use(Tabela_Empresa);
 //---------------------------------------------------------------------------------------------------------------
 // executa:
 app.listen(3000, () => {
-  console.log("Api rodando em htt://localhost:3000");
+  console.log("Api rodando em http://localhost:3000");
 });
