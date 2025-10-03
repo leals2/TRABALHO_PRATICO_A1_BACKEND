@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 
-let empresa = [
+let empresas = [
   {
     id: 1,
     nome: "Tech Solutions",
@@ -42,11 +42,11 @@ let empresa = [
 //---------------------------------------------------------------------------------------------------------------
 
 // --- Rota POST: Cadastrar Nova Empresa ---
-router.post("/empresa", (req, res, next) => {
-  const { nome, cnpj, email, telefone } = req.body;
+router.post("/empresas", (req, res, next) => {
+  const { nome, telefone, email, cnpj } = req.body;
 
   // Validação de campos obrigatórios
-  if (!nome || !cnpj || !email || !telefone) {
+  if (!nome || !telefone || !email || !cnpj) {
     return res
       .status(400)
       .json({ error: "nome, cnpj, email, telefone são obrigatorios!" });
@@ -62,15 +62,15 @@ router.post("/empresa", (req, res, next) => {
   const novaEmpresa = {
     id: Date.now(), // Usando timestamp como ID provisório
     nome,
-    cnpj,
-    email,
     telefone,
+    email,
+    cnpj,
   };
 
   empresas.push(novaEmpresa);
   res
     .status(201)
-    .json({ message: "empresa cadastrado com sucesso!", novoempresa });
+    .json({ message: "empresa cadastrado com sucesso!", novaEmpresa });
 });
 
 //---------------------------------------------------------------------------------------------------------------
@@ -137,7 +137,7 @@ router.delete("/empresas/:id", (req, res, next) => {
   // Sobrescrever a lista, removendo o aluno com o id recebido
   empresas = empresas.filter((empresa) => empresa.id != idRecebido);
 
-  res.json({ message: "empresa excluído com sucesso" });
+  res.json({ message: "empresa excluída com sucesso" });
 });
 
 module.exports = router;

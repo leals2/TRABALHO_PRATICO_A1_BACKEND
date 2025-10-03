@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 
-let contato = [
+let contatos = [
   {
     id: 1,
     nome: "Ana Souza",
@@ -41,25 +41,25 @@ let contato = [
 
 //----------------------------------------------------------------------------------------------------------
 // --- Rota POST: Cadastrar Novo Contato ---
-router.post("/contato", (req, res, next) => {
-  const { nome, cpf, email, telefone } = req.body;
+router.post("/contatos", (req, res, next) => {
+  const { nome, cpf, telefone, email } = req.body;
 
   // Validação de campos obrigatórios
-  if (!nome || !cpf || !email || !telefone) {
+  if (!nome || !cpf || !telefone || !email) {
     return res
       .status(400)
-      .json({ error: "nome, cpf, email, telefone são obrigatorios!" });
+      .json({ error: "nome, cpf, telefone, email são obrigatorios!" });
   }
 
   // Validação de CPF único
-  const contatoExistente = contatos.find((contato) => contato.cpf == cpf);
-  if (contatoExistente) {
+  const contato = contatos.find((contato) => contato.cpf == cpf);
+  if (contato) {
     return res.status(409).json({ erro: "CPF já cadastrado!" });
   }
 
   // Criação do novo Contato
   const novoContato = {
-    id: Date.now(), // Usando timestamp como ID provisório
+    id: Date.now(),
     nome,
     cpf,
     email,
@@ -84,7 +84,7 @@ router.get("/contatos", (req, res, next) => {
 // --- Rota GET: Buscar Contato por ID ---
 router.get("/contatos/:id", (req, res, next) => {
   const idRecebido = req.params.id;
-  const contato = contatos.find((contato) => contato.id == idRecebido);
+  const contato = contatos.find((c) => c.id == idRecebido);
 
   if (!contato) {
     return res.status(404).json({ error: "Contato não encontrado" });
